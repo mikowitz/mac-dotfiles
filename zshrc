@@ -29,3 +29,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/Applications/Lilypond.app/Contents/Resources/bin"
+
+alias gpr='git pull --rebase'
+alias gpoh='git push origin HEAD'
+alias gg='git grep -n $1'
