@@ -58,7 +58,7 @@ nnoremap <Leader><space> :noh<CR>
 set backspace=indent,eol,start
 
 " NERDTree
-let NERDTreeIgnore=['\.rbc$', '\~$']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.pdf$', '\.midi$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " ZoomWin
