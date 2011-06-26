@@ -19,6 +19,10 @@ syntax on
 set number
 set hidden
 
+" lilypond vim files
+set runtimepath+=/usr/local/Cellar/lilypond/current/share/lilypond/current/vim/
+au BufRead,BufNewFile *.{ly,lyi} set ft=lilypond
+
 " Whitespace
 set nowrap
 set tabstop=2
