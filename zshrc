@@ -21,15 +21,24 @@ export ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails rvm vi-mode)
+plugins=(git osx ruby rails rvm vi-mode autojump)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+#setopt auto_cd
+#cdpath=($HOME/projects $HOME/src/plm-website)
+
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:/Applications/Lilypond.app/Contents/Resources/bin"
+
+alias pond='lilypond $1.ly && open $1.pdf'
 
 alias gpr='git pull --rebase'
 alias gpoh='git push origin HEAD'
 alias gg='git grep -n $1'
+
+alias cwip='RAILS_ENV=cucumber rake cucumber:wip'
+
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
