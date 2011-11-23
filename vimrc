@@ -5,11 +5,16 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'sjbach/lusty'
+Bundle 'tpope/vim-rails'
+Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'vim-scripts/VimClojure'
 Bundle 'wgibbs/vim-irblack'
 Bundle 'wycats/nerdtree'
 
@@ -20,8 +25,17 @@ set number
 set hidden
 
 " lilypond vim files
-set runtimepath+=/usr/local/Cellar/lilypond/current/share/lilypond/current/vim/
-au BufRead,BufNewFile *.{ly,lyi} set ft=lilypond
+"set runtimepath+=/usr/local/Cellar/lilypond/current/share/lilypond/current/vim/
+set runtimepath+=/Applications/Lilypond.app/Contents/Resources/share/lilypond/current/vim/
+au BufRead,BufNewFile *.{ly,lyi,ily} set ft=lilypond
+
+" coffeescript
+au BufRead,BufNewFile *.coffee set ft=coffee
+
+" no backups
+set updatecount=0
+set nobackup
+set nowritebackup
 
 " Whitespace
 set nowrap
@@ -30,6 +44,11 @@ set shiftwidth=2
 set softtabstop=2
 set smarttab
 set expandtab
+
+set cindent
+set smartindent
+set autoindent
+set ai
 
 " colwidth
 set wrap
@@ -56,6 +75,9 @@ nnoremap <Leader><space> :noh<CR>
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
+" matchit
+runtime macros/matchit.vim
 
 " NERDTree
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.pdf$', '\.midi$']
@@ -84,8 +106,22 @@ nnoremap <C-l> <C-w>l
 imap jj <ESC>
 imap JJ <ESC>
 
+nnoremap j gj
+nnoremap k gk
+
 " search and center
 map n nzz
 map N Nzz
 
+set gfn=AnonymousPro:h12
+set vb
+
 color ir_black
+
+" learning vim the hard way
+noremap _ ddp
+noremap - ddkP
+inoremap <c-u> <esc>viwU<esc>i
+nnoremap <c-u> viwU
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>esv :source $MYVIMRC<cr>
