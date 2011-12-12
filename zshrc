@@ -30,8 +30,7 @@ source $ZSH/oh-my-zsh.sh
 #setopt auto_cd
 #cdpath=($HOME/projects $HOME/src/plm-website)
 
-export PATH="/usr/local/bin:$PATH"
-export PATH="$PATH:/Applications/Lilypond.app/Contents/Resources/bin"
+export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin"
 
 alias pond='lilypond $1.ly && open $1.pdf'
 
@@ -40,5 +39,9 @@ alias gpoh='git push origin HEAD'
 alias gg='git grep -n $1'
 
 alias cwip='RAILS_ENV=cucumber rake cucumber:wip'
+
+alias binstall='bundle install --binstubs'
+
+alias gitx='open . -a GitX.app'
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
