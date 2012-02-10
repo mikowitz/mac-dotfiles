@@ -32,8 +32,6 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin"
 
-alias pond='lilypond $1.ly && open $1.pdf'
-
 alias gpr='git pull --rebase'
 alias gpoh='git push origin HEAD'
 alias gg='git grep -n $1'
@@ -43,5 +41,7 @@ alias cwip='RAILS_ENV=cucumber rake cucumber:wip'
 alias binstall='bundle install --binstubs'
 
 alias gitx='open . -a GitX.app'
+
+pond() { lilypond $1.ly && open $1.pdf; }
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
