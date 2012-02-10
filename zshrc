@@ -35,6 +35,7 @@ export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Reso
 alias gpr='git pull --rebase'
 alias gpoh='git push origin HEAD'
 alias gg='git grep -n $1'
+alias bake='bundle exec rake $1'
 
 alias cwip='RAILS_ENV=cucumber rake cucumber:wip'
 
