@@ -113,6 +113,12 @@ nnoremap k gk
 map n nzz
 map N Nzz
 
+" reselect visual block after in/outdent
+" vimbits.com/bits/20
+vnoremap < <gv
+vnoremap > >gv
+
+" font
 set gfn=AnonymousPro:h12
 set vb
 
