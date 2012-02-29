@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 #setopt auto_cd
 #cdpath=($HOME/projects $HOME/src/plm-website)
 
-export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin"
+export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/texbin"
 
 alias gpr='git pull --rebase'
 alias gpoh='git push origin HEAD'
