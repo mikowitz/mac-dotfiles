@@ -1,5 +1,5 @@
 # run after pull to symlink files into your home directory
-# Borrowed from @thegreatape, who borrowed it from @throughnothing, # who...OSSFTW
+# Borrowed from @thegreatape, who borrowed it from @throughnothing, who...OSSFTW
 
 require 'fileutils'
 files = Dir['*'].reject{|f| f =~ /README|install/ }

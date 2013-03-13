@@ -126,6 +126,11 @@ set vb
 
 color ir_black
 
+" folding
+set foldmethod=indent
+set foldlevel=0
+set nofoldenable
+
 " learning vim the hard way
 noremap _ ddp
 noremap - ddkP
