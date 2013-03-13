@@ -133,6 +133,8 @@ set vb
 
 color ir_black
 
+set clipboard=unnamed
+
 " printing...
 set printoptions=syntax:n,bottom:7pc,top:7pc,left:7pc,right:3pc,header:1
 
