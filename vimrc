@@ -6,6 +6,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
@@ -16,6 +17,7 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'wgibbs/vim-irblack'
+Bundle 'wincent/Command-T'
 Bundle 'wycats/nerdtree'
 
 filetype plugin indent on
@@ -64,7 +66,7 @@ set statusline=%f\ %y%m%=%c\ %l/%L
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc
+set wildignore+=*.o,*.obj,.git,*.rbc,*.aux,*.log,*.pdf
 
 " Searching
 set hlsearch
@@ -84,7 +86,7 @@ let NERDTreeIgnore=['\.rbc$', '\~$', '\.pdf$', '\.midi$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " ZoomWin
-map <Leader><Leader> :ZoomWin<CR>
+map <Leader>z :ZoomWin<CR>
 
 " NERDCommenter
 map <Leader>cc <plug>NERDCommenterToggle
