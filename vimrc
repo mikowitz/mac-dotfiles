@@ -4,21 +4,28 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'eagletmt/ghcmod-vim'
 Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'Shougo/vimproc'
 Bundle 'sjbach/lusty'
 Bundle 'tpope/vim-rails'
 Bundle 'tsaleh/vim-matchit'
-Bundle 'vim-scripts/ZoomWin'
+Bundle 'vim-scripts/ack.vim'
 Bundle 'vim-scripts/VimClojure'
+Bundle 'vim-scripts/ZoomWin'
 Bundle 'wgibbs/vim-irblack'
 Bundle 'wincent/Command-T'
 Bundle 'wycats/nerdtree'
+Bundle 'xhr/vim-io'
 
 filetype plugin indent on
 
@@ -125,6 +132,9 @@ set gfn=AnonymousPro:h12
 set vb
 
 color ir_black
+
+" printing...
+set printoptions=syntax:n,bottom:7pc,top:7pc,left:7pc,right:3pc,header:1
 
 " folding
 set foldmethod=indent
