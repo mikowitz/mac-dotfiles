@@ -27,11 +27,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-#setopt auto_cd
-#cdpath=($HOME/projects $HOME/src/plm-website)
-
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/texbin"
 
+export EDITOR='vim'
 alias gpr='git pull --rebase'
 alias gpoh='git push origin HEAD'
 alias gg='git grep -n $1'
@@ -43,6 +41,27 @@ alias binstall='bundle install --binstubs'
 
 alias gitx='open . -a GitX.app'
 
+bindkey '^R' history-incremental-search-backward
+
 pond() { lilypond $1.ly && open $1.pdf; }
+2pdf() { texi2pdf $1.tex && open $1.pdf -a Preview; }
+mf2pdf() { mf $1.mf && gftodvi $1.2602gf && dvipdf $1.dvi && open $1.pdf; }
+
+newrails() { rails new $1 -T -dpostgresql --skip-bundle }
+
+alias poetry='cd ~/Dropbox/poetry'
+
+alias tas='tmux attach-session -t$1'
+alias tks='tmux kill-session -t$1'
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
+
+rvm default
