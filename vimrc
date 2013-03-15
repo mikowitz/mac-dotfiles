@@ -9,6 +9,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'gmarik/vundle'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
@@ -16,14 +17,12 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Shougo/vimproc'
-Bundle 'sjbach/lusty'
 Bundle 'tpope/vim-rails'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ack.vim'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'wgibbs/vim-irblack'
-Bundle 'wincent/Command-T'
 Bundle 'wycats/nerdtree'
 Bundle 'xhr/vim-io'
 
@@ -142,6 +141,10 @@ set printoptions=syntax:n,bottom:7pc,top:7pc,left:7pc,right:3pc,header:1
 set foldmethod=indent
 set foldlevel=0
 set nofoldenable
+
+" ctrl-p
+let g:ctrlp_map = '<leader>t'
+let g:ctrl_cmd = 'CtrlPMixed'
 
 " learning vim the hard way
 noremap _ ddp
