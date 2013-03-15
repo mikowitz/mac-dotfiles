@@ -144,7 +144,7 @@ set nofoldenable
 
 " ctrl-p
 let g:ctrlp_map = '<leader>t'
-let g:ctrl_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 " learning vim the hard way
 noremap _ ddp
