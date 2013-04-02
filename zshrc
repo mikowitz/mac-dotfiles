@@ -28,6 +28,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/texbin"
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+export PATH="/Users/mikowitz/projects/toolbox:$PATH"
 
 export EDITOR='vim'
 alias gpr='git pull --rebase'
@@ -54,9 +56,10 @@ alias poetry='cd ~/Dropbox/poetry'
 alias tas='tmux attach-session -t$1'
 alias tks='tmux kill-session -t$1'
 
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
@@ -64,4 +67,5 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
 export RUBY_HEAP_FREE_MIN=500000
 
-rvm default
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
