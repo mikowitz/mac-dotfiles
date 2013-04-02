@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/texbin"
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+export PATH="/Users/mikowitz/projects/toolbox:$PATH"
 
 export EDITOR='vim'
 alias gpr='git pull --rebase'
