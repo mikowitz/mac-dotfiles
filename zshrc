@@ -34,6 +34,7 @@ export PATH="/Users/mikowitz/projects/toolbox:$PATH"
 export EDITOR='vim'
 alias gpr='git pull --rebase'
 alias gpoh='git push origin HEAD'
+alias gpof='git push origin HEAD -f'
 alias gg='git grep -n $1'
 alias bake='bundle exec rake $1'
 
