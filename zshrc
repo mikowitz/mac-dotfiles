@@ -48,6 +48,7 @@ bindkey '^R' history-incremental-search-backward
 pond() { lilypond $1.ly && open $1.pdf; }
 2pdf() { texi2pdf $1.tex && open $1.pdf -a Preview; }
 mf2pdf() { mf $1.mf && gftodvi $1.2602gf && dvipdf $1.dvi && open $1.pdf; }
+alias love="/Applications/love.app/Contents/MacOS/love"
 
 newrails() { rails new $1 -T -dpostgresql --skip-bundle }
 
