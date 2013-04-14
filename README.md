@@ -5,13 +5,14 @@ $HOME is where the .heartrc is
 
 ## included files
 
+* rspec
+* tmux.conf
+* tmuxpowerlinerc
 * vimperatorrc
 * vimrc
   * dependencies: [vundle]
 * zshrc
   * dependencies: [oh-my-zsh]
-* tmux.conf
-* tmuxpowerlinerc
 
 
 [vundle]: http://www.github.com/gmarik/vundle" "Vundle"
