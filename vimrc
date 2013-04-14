@@ -121,7 +121,7 @@ nnoremap k gk
 " search and center
 map n nzz
 map N Nzz
-
+map Q :q<cr>
 " reselect visual block after in/outdent
 " vimbits.com/bits/20
 vnoremap < <gv
