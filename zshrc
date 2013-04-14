@@ -38,6 +38,8 @@ alias gpof='git push origin HEAD -f'
 alias gg='git grep -n $1'
 alias bake='bundle exec rake $1'
 
+alias restart='touch ~/.pow/restart.txt && touch tmp/restart.txt'
+
 alias cwip='RAILS_ENV=cucumber rake cucumber:wip'
 
 alias binstall='bundle install --binstubs'
