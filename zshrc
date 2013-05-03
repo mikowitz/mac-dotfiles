@@ -27,6 +27,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+export TERM=xterm-256color
+
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/texbin"
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 export PATH="/Users/mikowitz/projects/toolbox:$PATH"
