@@ -42,7 +42,7 @@ au BufRead,BufNewFile *.{ly,lyi,ily} set ft=lilypond
 au BufRead,BufNewFile *.coffee set ft=coffee
 
 " rspec in non-rails projects
-autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples for shared_context let expect
+autocmd BufRead,BufNewFile *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples for shared_context let expect
 highlight def link rubyRspec Function
 
 " no backups
