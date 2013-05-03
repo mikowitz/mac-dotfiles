@@ -1,1 +1,3 @@
---color
+--require /Users/mikowitz/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/rspec-pride-2.2.0/lib/rspec/pride
+--format RSpec::Pride
+
