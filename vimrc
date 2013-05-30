@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'arsenerei/vim-ragel'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'gmarik/vundle'
@@ -12,6 +13,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'msanders/snipmate.vim'
+Bundle 'rcyrus/snipmate-snippets-rubymotion'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Shougo/vimproc'
 Bundle 'sjbach/lusty'
