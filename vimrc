@@ -6,9 +6,14 @@ call vundle#rc()
 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'arsenerei/vim-ragel'
+Bundle 'derekwyatt/vim-scala'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'gmarik/vundle'
+Bundle 'guns/vim-clojure-static'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'JuliaLang/julia-vim'
+Bundle 'kazu-yamamoto/ghc-mod'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -18,15 +23,23 @@ Bundle 'rcyrus/snipmate-snippets-rubymotion'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Shougo/vimproc'
 Bundle 'sjbach/lusty'
+Bundle 'slim-template/vim-slim'
+Bundle 'sophacles/vim-processing'
+Bundle 'sudar/vim-arduino-syntax'
+Bundle 'tclem/vim-arduino'
+Bundle 't9md/vim-ruby-xmpfilter'
+Bundle 'tpope/vim-classpath'
+Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ack.vim'
-Bundle 'vim-scripts/VimClojure'
+Bundle 'vim-scripts/ck.vim'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'wgibbs/vim-irblack'
+Bundle 'wting/rust.vim'
 Bundle 'wycats/nerdtree'
 Bundle 'xhr/vim-io'
 
@@ -44,9 +57,26 @@ au BufRead,BufNewFile *.{ly,lyi,ily} set ft=lilypond
 " coffeescript
 au BufRead,BufNewFile *.coffee set ft=coffee
 
+" chuck
+au BufRead,BufNewFile *.ck set ft=ck
+
 " rspec in non-rails projects
 autocmd BufRead,BufNewFile *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples for shared_context let expect
 highlight def link rubyRspec Function
+
+" xmpfilter
+map <F4> <Plug>(xmpfilter-mark)
+map <F5> <Plug>(xmpfilter-run)
+
+" processing, arduino
+au BufRead,BufNewFile *.pde set filetype=processing
+au BufRead,BufNewFile *.ino set filetype=arduino
+
+" golang
+au BufRead,BufNewFile *.go set filetype=go
+
+" haskell
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 " no backups
 set updatecount=0
@@ -80,7 +110,7 @@ set statusline=%f\ %y%m%=%c\ %l/%L
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.aux,*.log,*.pdf
+set wildignore+=*.o,*.obj,.git,*.rbc,*.aux,*.log,*.pdf,*.dSYM,*~
 
 " Searching
 set hlsearch
@@ -153,6 +183,25 @@ set nofoldenable
 " ctrl-p
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlPMixed'
+
+" relative line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
+au FocusLost * :set number
+au FocusGained * :set relativenumber
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+nnoremap <leader><leader>l <S-a> \\<esc>
 
 " learning vim the hard way
 noremap _ ddp
