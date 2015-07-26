@@ -1,2 +1,5 @@
 .DS_Store
 tags
+.ruby-version
+.rbenv-vars
+dump.rdb
