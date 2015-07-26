@@ -1,3 +1,2 @@
---require /Users/mikowitz/.rbenv/versions/1.9.3-p392/lib/ruby/gems/1.9.1/gems/rspec-pride-2.2.0/lib/rspec/pride
---format RSpec::Pride
-
+--require /Users/michaelberkowitz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rspec-pride-3.0.0/lib/rspec/pride_formatter
+--format PrideFormatter
