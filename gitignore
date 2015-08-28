@@ -3,3 +3,4 @@ tags
 .ruby-version
 .rbenv-vars
 dump.rdb
+emacs.d/elpa
