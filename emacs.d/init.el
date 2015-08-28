@@ -147,3 +147,8 @@
 
 
 (use-package haml-mode :ensure t)
+
+(use-package avy
+  :ensure t
+  :config
+  (avy-setup-default))
