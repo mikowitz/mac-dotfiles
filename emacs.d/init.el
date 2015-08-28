@@ -63,7 +63,7 @@
     (evil-leader/set-key "cc" 'evilnc-comment-or-uncomment-lines)
     (evil-leader/set-key "x" 'helm-M-x)
     (evil-leader/set-key "t" 'helm-projectile-find-file)
-    (evil-leader/set-key "ev" (lambda () (interactive) (find-file-other-window "~/.emacs.d/init.el")))
+    (evil-leader/set-key "ev" (lambda () (interactive) (find-file-other-window "~/projects/dotfiles/emacs.d/init.el")))
     (evil-leader/set-key "z" (lambda () (interactive) (zoom-win)))))
 
 
