@@ -1,14 +1,16 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'arsenerei/vim-ragel'
+Bundle 'cespare/vim-toml'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'eagletmt/ghcmod-vim'
+Bundle 'elixir-lang/vim-elixir'
 Bundle 'gmarik/vundle'
 Bundle 'guns/vim-clojure-static'
 Bundle 'jnwhiteh/vim-golang'
@@ -16,9 +18,14 @@ Bundle 'JuliaLang/julia-vim'
 Bundle 'kazu-yamamoto/ghc-mod'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'mattreduce/vim-mix'
 Bundle 'msanders/snipmate.vim'
+Bundle 'mtscout6/vim-cjsx'
+Bundle 'mxw/vim-jsx'
+Bundle 'pangloss/vim-javascript'
 Bundle 'rcyrus/snipmate-snippets-rubymotion'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Shougo/vimproc'
@@ -31,10 +38,10 @@ Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-leiningen'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
-Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ack.vim'
 Bundle 'vim-scripts/ck.vim'
 Bundle 'vim-scripts/ZoomWin'
@@ -43,6 +50,7 @@ Bundle 'wting/rust.vim'
 Bundle 'wycats/nerdtree'
 Bundle 'xhr/vim-io'
 
+call vundle#end()
 filetype plugin indent on
 
 syntax on
@@ -53,6 +61,9 @@ set hidden
 "set runtimepath+=/usr/local/Cellar/lilypond/current/share/lilypond/current/vim/
 set runtimepath+=/Applications/Lilypond.app/Contents/Resources/share/lilypond/current/vim/
 au BufRead,BufNewFile *.{ly,lyi,ily} set ft=lilypond
+
+" clojure
+au BufRead,BufNewFile *.clj RainbowParenthesesToggle
 
 " coffeescript
 au BufRead,BufNewFile *.coffee set ft=coffee
@@ -179,6 +190,9 @@ set printoptions=syntax:n,bottom:7pc,top:7pc,left:7pc,right:3pc,header:1
 set foldmethod=indent
 set foldlevel=0
 set nofoldenable
+
+" jsx
+let g:jsx_ext_required = 0
 
 " ctrl-p
 let g:ctrlp_map = '<leader>t'
