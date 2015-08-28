@@ -9,7 +9,7 @@ home = File.expand_path('~/')
 files = files.map {|file| File.join(File.dirname(File.expand_path(__FILE__)), file) }
 
 files.each do |from|
-  next unless File.file?(from)
+  next unless File.file?(from) || File.directory?(from)
 
   to = "#{home}/.#{File.basename(from)}"
 
