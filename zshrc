@@ -21,7 +21,7 @@ export ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails rvm vi-mode autojump)
+plugins=(git osx ruby rails rvm autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,8 +34,8 @@ export TERM=xterm-256color
 export GOPATH="$HOME/go"
 
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/texbin"
-export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
-export PATH="/Users/mikowitz/projects/toolbox:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+export PATH="$HOME/projects/toolbox:$PATH"
 export PATH="/Applications/miniAudicle.app/Contents/Resources:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
@@ -48,6 +48,8 @@ alias gpoh='git push origin HEAD'
 alias gpof='git push origin HEAD -f'
 alias gg='git grep -n $1'
 alias bake='bundle exec rake $1'
+
+alias device_list="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/simctl list"
 
 alias restart='touch ~/.pow/restart.txt && touch tmp/restart.txt'
 
@@ -82,7 +84,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 # julia
 #export PATH="/Applications/Julia-0.2.0-rc1.app/Contents/Resources/julia/bin:$PATH"
 
-export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_GC_HEAP_INIT_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=1000000000
@@ -91,20 +93,11 @@ export RUBY_HEAP_FREE_MIN=500000
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# production stuff
-function mgh_import_prod(){
- RACK_ENV=production RDS_DB_NAME=ebdb RDS_USERNAME=michael RDS_PASSWORD=C@r3p0rt! RDS_HOSTNAME=db.production.careporthealth.com RDS_PORT=3306 rake app:import_patients:mgh FILE="$1";
-}
+export SECRET_TOKEN="thisismysuperlongsecrettokenfordevelopmentitalsohas50m3numb3r5"
 
-# seed staging
-function seed_careport_stg(){
-  RACK_ENV=staging AWS_ACCESS_KEY_ID=AKIAIW2P5NFP3I4WEPHQ AWS_SECRET_KEY=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 RDS_DB_NAME=ebdb RDS_USERNAME=michael RDS_PASSWORD=C@r3p0rt! RDS_HOSTNAME=db.staging.careporthealth.com RDS_PORT=3306 bake db:seed:staging;
-}
 
-function careport_stg_console(){
-  RACK_ENV=staging AWS_ACCESS_KEY_ID=AKIAIW2P5NFP3I4WEPHQ AWS_SECRET_KEY=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 RDS_DB_NAME=ebdb RDS_USERNAME=michael RDS_PASSWORD=C@r3p0rt! RDS_HOSTNAME=db.staging.careporthealth.com RDS_PORT=3306 rails console;
-}
+# added by travis gem
+[ -f /Users/michaelberkowitz/.travis/travis.sh ] && source /Users/michaelberkowitz/.travis/travis.sh
 
-function set_demo_env_and_execute(){
-  AWS_ACCESS_KEY_ID=AKIAITXU5F75MOBCZQ6Q AWS_SECRET_KEY=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 RACK_ENV=demo RDS_DB_NAME=ebdb RDS_USERNAME=michael RDS_PASSWORD=C@r3p0rt! RDS_HOSTNAME=db.demo.careporthealth.com RDS_PORT=3306 $@;
-}
+# load config for MYH
+[ -f /Users/mikowitz/.myh-config ] && source /Users/mikowitz.myh-config
