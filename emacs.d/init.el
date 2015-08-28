@@ -44,6 +44,10 @@
 (require 'use-package)
 
 
+(use-package avy
+  :ensure t
+  :config
+  (avy-setup-default))
 
 (use-package evil-leader
   :ensure t
@@ -64,7 +68,12 @@
     (evil-leader/set-key "x" 'helm-M-x)
     (evil-leader/set-key "t" 'helm-projectile-find-file)
     (evil-leader/set-key "ev" (lambda () (interactive) (find-file-other-window "~/projects/dotfiles/emacs.d/init.el")))
-    (evil-leader/set-key "z" (lambda () (interactive) (zoom-win)))))
+    (evil-leader/set-key "z" (lambda () (interactive) (zoom-win)))
+
+    ; avy
+    (evil-leader/set-key "w" 'avy-goto-word-0)
+    (evil-leader/set-key "g" 'avy-goto-line)
+  ))
 
 
 (use-package evil-nerd-commenter :ensure t)
@@ -147,8 +156,3 @@
 
 
 (use-package haml-mode :ensure t)
-
-(use-package avy
-  :ensure t
-  :config
-  (avy-setup-default))
