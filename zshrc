@@ -67,7 +67,7 @@ alias love="/Applications/love.app/Contents/MacOS/love"
 
 newrails() { rails new $1 -T -dpostgresql --skip-bundle }
 
-alias poetry='cd ~/Dropbox/poetry'
+alias poetry='cd ~/Dropbox/poetry && tmux'
 
 alias tas='tmux attach-session -t$1'
 alias tks='tmux kill-session -t$1'
