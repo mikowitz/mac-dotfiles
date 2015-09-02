@@ -71,6 +71,7 @@
     (evil-leader/set-key "t" 'helm-projectile-find-file)
     (evil-leader/set-key "ev" (lambda () (interactive) (find-file-other-window "~/projects/dotfiles/emacs.d/init.el")))
     (evil-leader/set-key "z" (lambda () (interactive) (mikowitz/zoom-win)))
+    (evil-leader/set-key "b" 'ibuffer)
 
     ; avy
     (evil-leader/set-key "w" 'avy-goto-word-0)
