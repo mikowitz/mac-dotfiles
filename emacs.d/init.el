@@ -156,3 +156,5 @@
 
 
 (use-package haml-mode :ensure t)
+(use-package rspec-mode :ensure t)
+(use-package json-mode :ensure t)
