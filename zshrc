@@ -48,6 +48,7 @@ alias gpoh='git push origin HEAD'
 alias gpof='git push origin HEAD -f'
 alias gg='git grep -n $1'
 alias bake='bundle exec rake $1'
+alias e="open . -a /Applications/Emacs.app"
 
 alias device_list="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/simctl list"
 
