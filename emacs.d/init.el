@@ -54,7 +54,7 @@
   :init (global-evil-leader-mode)
   :config
   (progn
-    (defun zoom-win ()
+    (defun mikowitz/zoom-win ()
       (if (boundp 'zoom-win-config)
           (progn
             (set-window-configuration zoom-win-config)
@@ -68,7 +68,7 @@
     (evil-leader/set-key "x" 'helm-M-x)
     (evil-leader/set-key "t" 'helm-projectile-find-file)
     (evil-leader/set-key "ev" (lambda () (interactive) (find-file-other-window "~/projects/dotfiles/emacs.d/init.el")))
-    (evil-leader/set-key "z" (lambda () (interactive) (zoom-win)))
+    (evil-leader/set-key "z" (lambda () (interactive) (mikowitz/zoom-win)))
 
     ; avy
     (evil-leader/set-key "w" 'avy-goto-word-0)
