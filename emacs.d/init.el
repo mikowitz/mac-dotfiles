@@ -47,7 +47,9 @@
 (use-package avy
   :ensure t
   :config
-  (avy-setup-default))
+  (progn
+    (avy-setup-default)
+    (setq avy-keys (list ?a ?o ?e ?u ?s ?n ?t ?h ?i ?d))))
 
 (use-package evil-leader
   :ensure t
