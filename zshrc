@@ -101,4 +101,4 @@ export SECRET_TOKEN="thisismysuperlongsecrettokenfordevelopmentitalsohas50m3numb
 [ -f /Users/michaelberkowitz/.travis/travis.sh ] && source /Users/michaelberkowitz/.travis/travis.sh
 
 # load config for MYH
-[ -f /Users/mikowitz/.myh-config ] && source /Users/mikowitz.myh-config
+[ -f /Users/michaelberkowitz/.myh-config ] && source /Users/michaelberkowitz.myh-config
