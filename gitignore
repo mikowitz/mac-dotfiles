@@ -3,3 +3,5 @@ tags
 .ruby-version
 .rbenv-vars
 dump.rdb
+/build
+.repl_history
