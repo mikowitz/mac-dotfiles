@@ -71,7 +71,9 @@
     (evil-leader/set-key "t" 'helm-projectile-find-file)
     (evil-leader/set-key "ev" (lambda () (interactive) (find-file-other-window "~/projects/dotfiles/emacs.d/init.el")))
     (evil-leader/set-key "z" (lambda () (interactive) (mikowitz/zoom-win)))
-    (evil-leader/set-key "b" 'ibuffer)
+    (evil-leader/set-key "b" 'iswitchb-buffer)
+    (evil-leader/set-key "m" 'magit-status)
+    (evil-leader/set-key "p" 'magit-push-current)
 
     ; avy
     (evil-leader/set-key "w" 'avy-goto-word-0)
@@ -161,3 +163,7 @@
 (use-package haml-mode :ensure t)
 (use-package rspec-mode :ensure t)
 (use-package json-mode :ensure t)
+(use-package alchemist :ensure t)
+(use-package feature-mode :ensure t)
+
+(iswitchb-mode 1)
