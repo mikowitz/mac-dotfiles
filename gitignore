@@ -5,3 +5,4 @@ tags
 dump.rdb
 /build
 .repl_history
+.projectile

@@ -33,7 +33,11 @@ export TERM=xterm-256color
 
 export GOPATH="$HOME/go"
 
-export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/texbin"
+#export ANDROID_HOME="/Applications/adt-bundle-mac/sdk"
+#PATH="$PATH:$ANDROID_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+export JAVA_HOME="/usr/libexec/java_home"
+
+export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/local/texlive/2015/bin/universal-darwin"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 export PATH="$HOME/projects/toolbox:$PATH"
 export PATH="/Applications/miniAudicle.app/Contents/Resources:$PATH"
@@ -85,6 +89,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 # julia
 #export PATH="/Applications/Julia-0.2.0-rc1.app/Contents/Resources/julia/bin:$PATH"
 
+export MAILGUN_API_KEY=key-96c7f844622b6e41c54ef9094d7afc62
+export MAILGUN_DOMAIN=https://api.mailgun.net/v3/mg.laurenhallwriting.com
+
 export RUBY_GC_HEAP_INIT_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
@@ -102,3 +109,6 @@ export SECRET_TOKEN="thisismysuperlongsecrettokenfordevelopmentitalsohas50m3numb
 
 # load config for MYH
 [ -f /Users/michaelberkowitz/.myh-config ] && source /Users/michaelberkowitz/.myh-config
+
+export NVM_DIR="/Users/michaelberkowitz/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

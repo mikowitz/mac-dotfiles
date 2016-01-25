@@ -22,6 +22,11 @@
 ; 2 spaces > 1 tab
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
+(defvaralias 'c-basic-offset 'tab-width)
+(defvaralias 'cperl-indent-level 'tab-width)
+
+(setq css-indent-offset 2)
+(setq scss-indent-offset 2)
 
 (toggle-frame-maximized)
 
@@ -73,7 +78,7 @@
     (evil-leader/set-key "z" (lambda () (interactive) (mikowitz/zoom-win)))
     (evil-leader/set-key "b" 'iswitchb-buffer)
     (evil-leader/set-key "m" 'magit-status)
-    (evil-leader/set-key "p" 'magit-push-current)
+    (evil-leader/set-key "p" 'magit-push-quickly)
 
     ; avy
     (evil-leader/set-key "w" 'avy-goto-word-0)
@@ -165,5 +170,11 @@
 (use-package json-mode :ensure t)
 (use-package alchemist :ensure t)
 (use-package feature-mode :ensure t)
+(use-package rust-mode :ensure t)
+(use-package toml-mode :ensure t)
+(use-package jade-mode :ensure t)
+(use-package jsx-mode :ensure t)
+(use-package scss-mode :ensure t)
+(use-package markdown-preview-mode :ensure t)
 
 (iswitchb-mode 1)
