@@ -105,10 +105,10 @@ export SECRET_TOKEN="thisismysuperlongsecrettokenfordevelopmentitalsohas50m3numb
 
 
 # added by travis gem
-[ -f /Users/michaelberkowitz/.travis/travis.sh ] && source /Users/michaelberkowitz/.travis/travis.sh
+# [ -f /Users/michaelberkowitz/.travis/travis.sh ] && source /Users/michaelberkowitz/.travis/travis.sh
 
 # load config for MYH
-[ -f /Users/michaelberkowitz/.myh-config ] && source /Users/michaelberkowitz/.myh-config
+# [ -f /Users/michaelberkowitz/.myh-config ] && source /Users/michaelberkowitz/.myh-config
 
 export NVM_DIR="/Users/michaelberkowitz/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

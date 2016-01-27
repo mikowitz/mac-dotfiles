@@ -177,5 +177,6 @@
 (use-package scss-mode :ensure t)
 (use-package markdown-preview-mode :ensure t)
 (use-package slim-mode :ensure t)
+(use-package magit :ensure t)
 
 (iswitchb-mode 1)
