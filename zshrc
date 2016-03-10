@@ -39,7 +39,7 @@ export JAVA_HOME="/usr/libexec/java_home"
 
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/local/texlive/2015/bin/universal-darwin"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
-export PATH="$HOME/projects/toolbox:$PATH"
+export PATH="$HOME/Code/toolbox:$PATH"
 export PATH="/Applications/miniAudicle.app/Contents/Resources:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
@@ -86,8 +86,8 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-# julia
-#export PATH="/Applications/Julia-0.2.0-rc1.app/Contents/Resources/julia/bin:$PATH"
+# direnv
+eval "$(direnv hook zsh)"
 
 export MAILGUN_API_KEY=key-96c7f844622b6e41c54ef9094d7afc62
 export MAILGUN_DOMAIN=https://api.mailgun.net/v3/mg.laurenhallwriting.com
@@ -103,12 +103,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export SECRET_TOKEN="thisismysuperlongsecrettokenfordevelopmentitalsohas50m3numb3r5"
 
+. /Users/mberkowitz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
 
 # added by travis gem
 # [ -f /Users/michaelberkowitz/.travis/travis.sh ] && source /Users/michaelberkowitz/.travis/travis.sh
-
-# load config for MYH
-# [ -f /Users/michaelberkowitz/.myh-config ] && source /Users/michaelberkowitz/.myh-config
 
 export NVM_DIR="/Users/michaelberkowitz/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

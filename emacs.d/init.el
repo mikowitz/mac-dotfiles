@@ -178,5 +178,50 @@
 (use-package markdown-preview-mode :ensure t)
 (use-package slim-mode :ensure t)
 (use-package magit :ensure t)
+(use-package web-mode :ensure t)
+(use-package yaml-mode :ensure t)
+(use-package coffee-mode :ensure t)
+
+(use-package tuareg :ensure t)
+(use-package utop :ensure t)
+(use-package merlin :ensure t)
 
 (iswitchb-mode 1)
+
+(setq ruby-insert-encoding-magic-comment nil)
+
+(add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
+(setq auto-mode-alist
+      (append '(("\\.ml[ily]?$" . tuareg-mode)
+                ("\\.topml$" . tuareg-mode))
+              auto-mode-alist))
+(autoload 'utop-minor-mode "utop" "Toplevel for OCaml" t)
+(add-hook 'tuareg-mode-hook 'utop-minor-mode)
+(add-hook 'tuareg-mode-hook 'merlin-mode)
+(setq merlin-use-auto-complete-mode t)
+(setq merlin-error-after-save nil)
+
+;; -- merlin setup ---------------------------------------
+
+(setq opam-share (substring (shell-command-to-string "opam config var share") 0 -1))
+(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
+(require 'merlin)
+
+;; Enable Merlin for ML buffers
+(add-hook 'tuareg-mode-hook 'merlin-mode t)
+(add-hook 'caml-mode-hook 'merlin-mode t)
+;; Enable auto-complete
+(setq merlin-use-auto-complete-mode 'easy)
+;; Use opam switch to lookup ocamlmerlin binary
+(setq merlin-command 'opam)
+
+;; So you can do it on a mac, where `C-<up>` and `C-<down>` are used
+;; by spaces.
+(define-key merlin-mode-map
+  (kbd "C-c <up>") 'merlin-type-enclosing-go-up)
+(define-key merlin-mode-map
+  (kbd "C-c <down>") 'merlin-type-enclosing-go-down)
+(set-face-background 'merlin-type-face "#88FF44")
+
+(add-to-list 'load-path "/Users/mberkowitz/.opam/system/share/emacs/site-lisp")
+(require 'ocp-indent)
