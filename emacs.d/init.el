@@ -181,52 +181,57 @@
 (use-package web-mode :ensure t)
 (use-package yaml-mode :ensure t)
 (use-package coffee-mode :ensure t)
-
-(use-package tuareg :ensure t)
-(use-package utop :ensure t)
-(use-package merlin :ensure t)
+(use-package yasnippet :ensure t)
+(use-package elixir-yasnippets :ensure t)
 
 (iswitchb-mode 1)
 
 (setq ruby-insert-encoding-magic-comment nil)
 
-(add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
-(setq auto-mode-alist
-      (append '(("\\.ml[ily]?$" . tuareg-mode)
-                ("\\.topml$" . tuareg-mode))
-              auto-mode-alist))
-(autoload 'utop-minor-mode "utop" "Toplevel for OCaml" t)
-(add-hook 'tuareg-mode-hook 'utop-minor-mode)
-(add-hook 'tuareg-mode-hook 'merlin-mode)
-(setq merlin-use-auto-complete-mode t)
-(setq merlin-error-after-save nil)
+;; OCAML
+;; (use-package tuareg :ensure t)
+;; (use-package utop :ensure t)
+;; (use-package merlin :ensure t)
 
-;; -- merlin setup ---------------------------------------
+;; (add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
+;; (setq auto-mode-alist
+;;       (append '(("\\.ml[ily]?$" . tuareg-mode)
+;;                 ("\\.topml$" . tuareg-mode))
+;;               auto-mode-alist))
+;; (autoload 'utop-minor-mode "utop" "Toplevel for OCaml" t)
+;; (add-hook 'tuareg-mode-hook 'utop-minor-mode)
+;; (add-hook 'tuareg-mode-hook 'merlin-mode)
+;; (setq merlin-use-auto-complete-mode t)
+;; (setq merlin-error-after-save nil)
 
-(setq opam-share (substring (shell-command-to-string "opam config var share") 0 -1))
-(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
-(require 'merlin)
+;; ;; -- merlin setup ---------------------------------------
 
-;; Enable Merlin for ML buffers
-(add-hook 'tuareg-mode-hook 'merlin-mode t)
-(add-hook 'caml-mode-hook 'merlin-mode t)
-;; Enable auto-complete
-(setq merlin-use-auto-complete-mode 'easy)
-;; Use opam switch to lookup ocamlmerlin binary
-(setq merlin-command 'opam)
+;; (setq opam-share (substring (shell-command-to-string "opam config var share") 0 -1))
+;; (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
+;; (require 'merlin)
 
-;; So you can do it on a mac, where `C-<up>` and `C-<down>` are used
-;; by spaces.
-(define-key merlin-mode-map
-  (kbd "C-c <up>") 'merlin-type-enclosing-go-up)
-(define-key merlin-mode-map
-  (kbd "C-c <down>") 'merlin-type-enclosing-go-down)
-(set-face-background 'merlin-type-face "#88FF44")
+;; ;; Enable Merlin for ML buffers
+;; (add-hook 'tuareg-mode-hook 'merlin-mode t)
+;; (add-hook 'caml-mode-hook 'merlin-mode t)
+;; ;; Enable auto-complete
+;; (setq merlin-use-auto-complete-mode 'easy)
+;; ;; Use opam switch to lookup ocamlmerlin binary
+;; (setq merlin-command 'opam)
 
-(add-to-list 'load-path "/Users/mberkowitz/.opam/system/share/emacs/site-lisp")
-(require 'ocp-indent)
+;; ;; So you can do it on a mac, where `C-<up>` and `C-<down>` are used
+;; ;; by spaces.
+;; (define-key merlin-mode-map
+;;   (kbd "C-c <up>") 'merlin-type-enclosing-go-up)
+;; (define-key merlin-mode-map
+;;   (kbd "C-c <down>") 'merlin-type-enclosing-go-down)
+;; (set-face-background 'merlin-type-face "#88FF44")
 
-;; (add-to-list 'auto-mode-alist '(".html(.*).erb\\'" . web-mode))
-;; (add-to-list 'auto-mode-alist '(".html\\+mobile_redesign.erb\\'" . web-mode))
-;; (add-to-list 'auto-mode-alist '(".html.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '(".erb\\'" . web-mode))
+;; (add-to-list 'load-path "/Users/mberkowitz/.opam/system/share/emacs/site-lisp")
+;; (require 'ocp-indent)
+
+;; ;; (add-to-list 'auto-mode-alist '(".html(.*).erb\\'" . web-mode))
+;; ;; (add-to-list 'auto-mode-alist '(".html\\+mobile_redesign.erb\\'" . web-mode))
+;; ;; (add-to-list 'auto-mode-alist '(".html.erb\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '(".erb\\'" . web-mode))
+(require 'yasnippet)
+(yas-global-mode 1)
