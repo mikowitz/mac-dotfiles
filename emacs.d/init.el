@@ -225,3 +225,8 @@
 
 (add-to-list 'load-path "/Users/mberkowitz/.opam/system/share/emacs/site-lisp")
 (require 'ocp-indent)
+
+;; (add-to-list 'auto-mode-alist '(".html(.*).erb\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '(".html\\+mobile_redesign.erb\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '(".html.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '(".erb\\'" . web-mode))
