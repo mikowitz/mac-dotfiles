@@ -10,13 +10,14 @@ Plug 'easymotion/vim-easymotion'
 Plug 'elixir-lang/vim-elixir'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'jaxbot/semantic-highlight.vim'
-Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'vim-scripts/ZoomWin'
 Plug 'wgibbs/vim-irblack'
 call plug#end()
 
