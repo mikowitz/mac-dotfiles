@@ -38,7 +38,7 @@ export GOPATH="$HOME/go"
 export JAVA_HOME="/usr/libexec/java_home"
 
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/local/texlive/2015/bin/universal-darwin"
-export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 export PATH="$HOME/Code/toolbox:$PATH"
 export PATH="/Applications/miniAudicle.app/Contents/Resources:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
