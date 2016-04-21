@@ -1,4 +1,5 @@
 set -gx TERM "screen-256color"
+set -Ux LSCOLORS Gxfxcxdxbxegedabagacad
 
 alias g "git"
 alias v "vim"
