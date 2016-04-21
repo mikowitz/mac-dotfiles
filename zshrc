@@ -111,3 +111,5 @@ export SECRET_TOKEN="thisismysuperlongsecrettokenfordevelopmentitalsohas50m3numb
 
 export NVM_DIR="/Users/michaelberkowitz/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

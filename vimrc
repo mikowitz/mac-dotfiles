@@ -10,6 +10,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'elixir-lang/vim-elixir'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'jaxbot/semantic-highlight.vim'
+Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -55,6 +56,8 @@ set cindent
 set smartindent
 set autoindent
 set ai
+
+set backspace=indent,eol,start
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
