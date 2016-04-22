@@ -13,11 +13,11 @@ Plug 'jaxbot/semantic-highlight.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'regedarek/ZoomWin'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
-Plug 'vim-scripts/ZoomWin'
 Plug 'wgibbs/vim-irblack'
 call plug#end()
 
@@ -95,3 +95,10 @@ nnoremap <Leader>a :Ag<space>
 nnoremap <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vq :VimuxCloseRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
+
+" ZooomWin
+nnoremap <Leader>z :ZoomWin<CR>
+
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
