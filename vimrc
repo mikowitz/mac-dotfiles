@@ -6,7 +6,6 @@ set clipboard=unnamed
 
 call plug#begin('~/.vim/plugged')
 Plug 'benmills/vimux'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'elixir-lang/vim-elixir'
 Plug 'gosukiwi/vim-atom-dark'
@@ -20,13 +19,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
-Plug 'wgibbs/vim-irblack'
 call plug#end()
 
 syntax on
-set relativenumber
+set number
+"set relativenumber
 set hidden
 set vb
+set regexpengine=2
 
 set tags+=./.git/tags
 
@@ -131,3 +131,5 @@ nnoremap <Leader>j :Explore<CR>
 nnoremap <C-x>0 :ZoomWin<CR>
 nnoremap <C-x>1 <C-w>v
 nnoremap <C-x>2 <C-w>s
+
+autocmd BufWritePre * :%s/\s\+$//e

@@ -15,3 +15,4 @@ alias gpof "git push origin HEAD --force"
 alias bake "bundle exec rake"
 
 eval (direnv hook fish)
+source ~/.ez.fish
