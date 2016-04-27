@@ -9,6 +9,7 @@ Plug 'benmills/vimux'
 Plug 'easymotion/vim-easymotion'
 Plug 'elixir-lang/vim-elixir'
 Plug 'gosukiwi/vim-atom-dark'
+Plug 'guns/vim-sexp'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -19,6 +20,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 syntax on
