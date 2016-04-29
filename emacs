@@ -25,19 +25,33 @@
     (package-refresh-contents))
 
 (ensure-package-installed 'atom-dark-theme
+                          'avy
 			  'evil
+                          'evil-leader
 			  'helm
+                          'helm-projectile
 			  'magit
+                          'powerline-evil
 			  'projectile
                           'relative-line-numbers
+                          'use-package
 			  'web-mode)
+
+(require 'use-package)
 
 ;; EViL mode
 (evil-mode t)
 (require 'init-evil)
 
+(require 'projectile)
+(projectile-global-mode)
+
 ;; Helm
 (require 'init-helm)
+
+(require 'helm-projectile)
+(helm-projectile-on)
+(global-set-key (kbd "C-x C-f") #'helm-projectile)
 
 ;; Theme
 (load-theme 'atom-dark t)
@@ -47,3 +61,10 @@
 
 ;; auto-mode mappings
 (add-to-list 'auto-mode-alist '("emacs$" . emacs-lisp-mode))
+
+(require 'init-powerline)
+
+(when (memq window-system '(mac ns))
+  (setq ns-use-srgb-colorspace nil))
+
+(provide 'init)
