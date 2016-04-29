@@ -70,4 +70,6 @@
 
 (setq avy-keys (list ?a ?o ?e ?u ?h ?t ?n ?s))
 
+(setq explicit-shell-file-name "/bin/zsh")
+
 (provide 'init)

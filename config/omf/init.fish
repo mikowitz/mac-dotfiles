@@ -8,6 +8,7 @@ set PATH $HOME/.rbenv/shims $PATH
 set PATH /Applications/Postgres.app/Contents/Versions/9.4/bin $PATH
 rbenv rehash >/dev/null ^&1
 
+alias e "open . -a Emacs.app"
 alias g "git"
 alias v "vim"
 alias gpoh "git push origin HEAD"

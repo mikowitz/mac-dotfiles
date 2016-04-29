@@ -14,6 +14,8 @@
  "t" #'helm-projectile
  "b" 'helm-mini
  "cc" 'evilnc-comment-or-uncomment-lines
+ "w" 'avy-goto-word-0
+ "l" 'avy-goto-line
 )
 
 (provide 'init-evil)
