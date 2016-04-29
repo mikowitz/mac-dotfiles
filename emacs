@@ -1,3 +1,7 @@
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+(require 'init-layout)
+
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -20,15 +24,26 @@
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 
-(ensure-package-installed 'evil
+(ensure-package-installed 'atom-dark-theme
+			  'evil
 			  'helm
 			  'magit
 			  'projectile
+                          'relative-line-numbers
 			  'web-mode)
 
+;; EViL mode
 (evil-mode t)
+(require 'init-evil)
 
+;; Helm
+(require 'init-helm)
 
-(global-set-key (kbd "M-x") #'helm-M-x)
-(global-set-key (kbd "C-x C-f") #'helm-find-files)
-(helm-mode 1)
+;; Theme
+(load-theme 'atom-dark t)
+
+;; relative line numbers
+(global-relative-line-numbers-mode)
+
+;; auto-mode mappings
+(add-to-list 'auto-mode-alist '("emacs$" . emacs-lisp-mode))
