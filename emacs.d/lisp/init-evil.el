@@ -1,16 +1,19 @@
+(require 'evil-leader)
+(require 'evil-nerd-commenter)
+
 ;; navigation
 (global-set-key (kbd "C-l") #'evil-window-right)
 (global-set-key (kbd "C-h") #'evil-window-left)
 (global-set-key (kbd "C-k") #'evil-window-up)
 (global-set-key (kbd "C-j") #'evil-window-down)
 
-(require 'evil-leader)
 (global-evil-leader-mode)
 
 (evil-leader/set-leader ",")
 (evil-leader/set-key
  "t" #'helm-projectile
  "b" 'helm-mini
+ "cc" 'evilnc-comment-or-uncomment-lines
 )
 
 (provide 'init-evil)

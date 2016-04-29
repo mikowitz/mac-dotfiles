@@ -28,6 +28,7 @@
                           'avy
 			  'evil
                           'evil-leader
+                          'evil-nerd-commenter
 			  'helm
                           'helm-projectile
 			  'magit
@@ -66,5 +67,7 @@
 
 (when (memq window-system '(mac ns))
   (setq ns-use-srgb-colorspace nil))
+
+(setq avy-keys (list ?a ?o ?e ?u ?h ?t ?n ?s))
 
 (provide 'init)

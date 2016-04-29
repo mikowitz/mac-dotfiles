@@ -6,9 +6,8 @@
 (setq helm-completion-in-region-fuzzy-match t)
 
 (setq helm-M-x-fuzzy-match t)
-(setq helm-candidate-number-limit 50)
+(setq helm-candidate-number-limit 50)   
 (setq helm-buffers-fuzzy-matching t)
 (setq helm-recentf-fuzzy-match t)
 
 (provide 'init-helm)
-
