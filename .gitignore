@@ -1,6 +1,8 @@
 config/fish/fish_history
 emacs.d/elpa
 emacs.d/auto-save-list
+emacs.d/projectile*
+emacs.d/recent*
 
 config/direnv/allow
-config/fish/fishd*
+config/fish/fishd.f45c898f52c3

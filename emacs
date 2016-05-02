@@ -4,9 +4,9 @@
 
 (require 'package)
 
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("mepla-stable" . "http://stable.melpa.org/packages/"))
+(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -26,17 +26,17 @@
 
 (ensure-package-installed 'atom-dark-theme
                           'avy
-			  'evil
+                          'evil
                           'evil-leader
                           'evil-nerd-commenter
-			  'helm
+                          'helm
                           'helm-projectile
-			  'magit
+                          'magit
                           'powerline-evil
-			  'projectile
+                          'projectile
                           'relative-line-numbers
                           'use-package
-			  'web-mode)
+                          'web-mode)
 
 (require 'use-package)
 
@@ -71,5 +71,24 @@
 (setq avy-keys (list ?a ?o ?e ?u ?h ?t ?n ?s))
 
 (setq explicit-shell-file-name "/bin/zsh")
+
+(setq make-backup-files nil)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(defvaralias 'c-basic-offset 'tab-width)
+(defvaralias 'cperl-indent-level 'tab-width)
+
+
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+
+(setq css-indent-offset 2)
+(setq scss-indent-offset 2)
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(setq make-backup-files nil)
 
 (provide 'init)
