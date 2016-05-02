@@ -4,7 +4,7 @@
 
 (require 'package)
 
-(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
@@ -26,12 +26,14 @@
 
 (ensure-package-installed 'atom-dark-theme
                           'avy
+                          'clojure-mode
                           'evil
                           'evil-leader
                           'evil-nerd-commenter
                           'helm
                           'helm-projectile
                           'magit
+                          'paredit
                           'powerline-evil
                           'projectile
                           'relative-line-numbers
@@ -90,5 +92,14 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (setq make-backup-files nil)
+
+(autoload 'enable-paredit-mode "paredit" "Paredit!" t)
+(add-hook 'clojure-mode-hook #'enable-paredit-mode)
+
+(setq ring-bell-function 'ignore)
+(blink-cursor-mode 0)
+(show-paren-mode)
+
+(require 'lilypond-init)
 
 (provide 'init)
