@@ -33,7 +33,6 @@
                           'helm
                           'helm-projectile
                           'magit
-                          'paredit
                           'powerline-evil
                           'projectile
                           'relative-line-numbers
@@ -93,13 +92,25 @@
 
 (setq make-backup-files nil)
 
-(autoload 'enable-paredit-mode "paredit" "Paredit!" t)
-(add-hook 'clojure-mode-hook #'enable-paredit-mode)
+;; (autoload 'enable-paredit-mode "paredit" "Paredit!" t)
+;; (add-hook 'clojure-mode-hook #'enable-parinfer-mode)
 
 (setq ring-bell-function 'ignore)
 (blink-cursor-mode 0)
 (show-paren-mode)
 
 (require 'lilypond-init)
+(require 'parinfer-mode)
+
+;; Set Speclj indentaion
+(put 'describe 'clojure-backtracking-indent '(4 2))
+(put 'it 'clojure-backtracking-indent '(4 2))
+(put 'before 'clojure-backtracking-indent '(2))
+(put 'before-all 'clojure-backtracking-indent '(2))
+(put 'after-all 'clojure-backtracking-indent '(2))
+(put 'after 'clojure-backtracking-indent '(2))
+
+;; (require 'haml-mode)
+(use-package haml-mode :ensure t)
 
 (provide 'init)

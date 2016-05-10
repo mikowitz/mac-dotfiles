@@ -19,5 +19,9 @@ function pond
   lilypond $argv.ly; and open $argv.pdf
 end
 
+function 2pdf
+  texi2pdf $argv.tex; and open $argv.pdf
+end
+
 eval (direnv hook fish)
 source ~/.ez.fish
