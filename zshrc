@@ -35,7 +35,7 @@ export GOPATH="$HOME/go"
 
 #export ANDROID_HOME="/Applications/adt-bundle-mac/sdk"
 #PATH="$PATH:$ANDROID_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
-export JAVA_HOME="/usr/libexec/java_home"
+export JAVA_HOME="/Library/Java/Home"
 
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/local/texlive/2015/bin/universal-darwin"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
