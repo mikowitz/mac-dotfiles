@@ -26,6 +26,7 @@
 
 (ensure-package-installed 'atom-dark-theme
                           'avy
+                          'base16-theme
                           'clojure-mode
                           'evil
                           'evil-leader
@@ -56,7 +57,7 @@
 (global-set-key (kbd "C-x C-f") #'helm-projectile)
 
 ;; Theme
-(load-theme 'atom-dark t)
+(load-theme 'base16-twilight-dark)
 
 ;; relative line numbers
 (global-relative-line-numbers-mode)
@@ -112,5 +113,6 @@
 
 ;; (require 'haml-mode)
 (use-package haml-mode :ensure t)
+
 
 (provide 'init)
