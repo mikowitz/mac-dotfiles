@@ -16,6 +16,8 @@
  "cc" 'evilnc-comment-or-uncomment-lines
  "w" 'avy-goto-word-0
  "l" 'avy-goto-line
+ "m" 'magit-status
+ "ir" 'magit-rebase-interactive
 )
 
 (provide 'init-evil)
