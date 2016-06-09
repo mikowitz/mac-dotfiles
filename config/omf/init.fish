@@ -15,6 +15,14 @@ alias gpoh "git push origin HEAD"
 alias gpof "git push origin HEAD --force"
 alias bake "bundle exec rake"
 
+function tas
+  tmux attach-session -t $argv
+end
+
+function tks
+  tmux kill-session -t $argv
+end
+
 function pond
   lilypond $argv.ly; and open $argv.pdf
 end

@@ -1,4 +1,5 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(setq inhibit-startup-message t)
 
 (require 'init-layout)
 
@@ -8,6 +9,8 @@
                          ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
 
+(setq backup-directory-alist `(("." . "~/.saves")))
+
 (fringe-mode '(1 . 0))
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -16,17 +19,16 @@
   (mapcar
    (lambda (package)
      (if (package-installed-p package)
-	 nil
+      nil
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-	   (package-install package)
-	 package)))
+        (package-install package)
+        package)))
    packages))
 
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 
-(ensure-package-installed 'atom-dark-theme
-                          'avy
+(ensure-package-installed 'avy
                           'base16-theme
                           'clojure-mode
                           'evil
@@ -65,6 +67,7 @@
 
 ;; auto-mode mappings
 (add-to-list 'auto-mode-alist '("emacs$" . emacs-lisp-mode))
+(add-to-list 'auto-mode-alist '("erb$" . web-mode))
 
 (require 'init-powerline)
 
@@ -95,25 +98,30 @@
 (setq make-backup-files nil)
 
 ;; (autoload 'enable-paredit-mode "paredit" "Paredit!" t)
-;; (add-hook 'clojure-mode-hook #'enable-parinfer-mode)
 
 (setq ring-bell-function 'ignore)
+
 (blink-cursor-mode 0)
 (show-paren-mode)
 
 (require 'lilypond-init)
-(require 'parinfer-mode)
-
-;; Set Speclj indentaion
-(put 'describe 'clojure-backtracking-indent '(4 2))
-(put 'it 'clojure-backtracking-indent '(4 2))
-(put 'before 'clojure-backtracking-indent '(2))
-(put 'before-all 'clojure-backtracking-indent '(2))
-(put 'after-all 'clojure-backtracking-indent '(2))
-(put 'after 'clojure-backtracking-indent '(2))
 
 ;; (require 'haml-mode)
 (use-package haml-mode :ensure t)
 
+(require 'ac-cider)
+(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+(eval-after-load "auto-complete"
+  '(progn
+     (add-to-list 'ac-modes 'cider-mode)
+     (add-to-list 'ac-modes 'cider-repl-mode)))
+
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 (provide 'init)

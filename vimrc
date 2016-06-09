@@ -40,41 +40,27 @@ set ai
 set backspace=indent,eol,start
 
 call plug#begin('~/.vim/plugged')
-Plug 'benmills/vimux'
-Plug 'easymotion/vim-easymotion'
-Plug 'elixir-lang/vim-elixir'
-Plug 'gosukiwi/vim-atom-dark'
+Plug 'chriskempson/base16-vim'
 Plug 'guns/vim-sexp'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'regedarek/ZoomWin'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 set tags+=./.git/tags
 
-color atom-dark-256
+"color atom-dark-256
+set background=dark
+colorscheme base16-twilight
 
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" easymotion
-map <Leader>l <Plug>(easymotion-bd-jk)
-nmap <Leader>l <Plug>(easymotion-overwin-line)
-
-map <Leader>w <Plug>(easymotion-overwin-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-
-map <Leader>f <Plug>(easymotion-overwin-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 let g:EasyMotion_keys = 'aoeuisnthd'
 
