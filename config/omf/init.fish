@@ -33,3 +33,4 @@ end
 
 eval (direnv hook fish)
 source ~/.ez.fish
+source ~/.aws.fish

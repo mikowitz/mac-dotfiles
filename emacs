@@ -124,4 +124,12 @@
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 (add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
+(require 'parinfer-mode)
+
+require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face lines-tail))
+
+(global-whitespace-mode +1)
+
 (provide 'init)
