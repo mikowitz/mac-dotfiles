@@ -1,4 +1,6 @@
 config/fish/fish_history
+config/.mono
+config/heroku
 emacs.d/elpa
 emacs.d/auto-save-list
 emacs.d/projectile*
