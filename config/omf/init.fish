@@ -9,10 +9,19 @@ set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 set PATH /Applications/Postgres.app/Contents/Versions/9.4/bin $PATH
 set PATH /Applications/Lilypond.app/Contents/Resources/bin $PATH
+set PATH $HOME/.cargo/bin $PATH
+
+set GOPATH $HOME/go
+
+set PATH $GOPATH/bin $PATH
+
 rbenv rehash >/dev/null ^&1
 
-set PSQL_EDITOR /usr/local/bin/vim
+set -gx JAVA_HOME (/usr/libexec/java_home)
 
+set -gx EDITOR "vim"
+
+alias ic "cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias e "vim ."
 alias g "git"
 alias gpoh "git push origin HEAD"
@@ -29,6 +38,10 @@ end
 
 function pond
   lilypond $argv.ly; and open $argv.pdf
+end
+
+function rst
+  rustc $argv.rs; and eval ./$argv
 end
 
 function 2pdf

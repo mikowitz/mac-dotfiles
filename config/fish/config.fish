@@ -6,3 +6,4 @@ set -gx OMF_PATH "/Users/mberkowitz/.local/share/omf"
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
+set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
