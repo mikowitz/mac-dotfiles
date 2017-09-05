@@ -7,6 +7,7 @@ set clipboard=unnamed
 syntax on
 filetype plugin indent on
 set relativenumber
+set number
 set numberwidth=3
 set hidden
 set vb
@@ -29,11 +30,15 @@ set nowritebackup
 " Whitespace {{{
 set nowrap
 set tabstop=2
-set shiftwidth=2
 set softtabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
+set listchars=tab:▸\ ,eol:¬,space:.
 " }}}
+
+set ttyfast
+set lazyredraw
 
 set cindent
 set smartindent
@@ -41,20 +46,41 @@ set autoindent
 set ai
 
 set backspace=indent,eol,start
+set ruler
+
+filetype off
+set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
+filetype on
+syntax on
 
 call plug#begin('~/.vim/plugged')
+
+Plug 'hashivim/vim-terraform'
+let g:terraform_align=1
+
+Plug 'alvan/vim-closetag'
+
+let g:closetag_filenames = "*.html,*.xhtml,*.js,*.jsx"
+
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+let g:jsx_ext_required = 0
 
 Plug 'godlygeek/tabular'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'eagletmt/neco-ghc'
-Plug 'scrooloose/syntastic'
 Plug 'neovimhaskell/haskell-vim'
 
 Plug 'itchyny/vim-haskell-indent'
 
-Plug 'scrooloose/nerdtree'
 
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
@@ -123,9 +149,53 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 Plug '~/.vim/plugged/potion'
 Plug '~/Code/vimix-spec'
 
+Plug 'fatih/vim-go'
+let g:go_fmt_command = "goimports"
+
+Plug 'wlangstroth/vim-racket'
+
+Plug 'rust-lang/rust.vim'
+
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
+
+let g:rainbow_conf = {
+	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+	\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+	\	'operators': '_,_',
+	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+	\	'separately': {
+	\		'*': {},
+	\		'tex': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+	\		},
+	\		'lisp': {
+	\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+	\		},
+	\		'vim': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+	\		},
+	\		'html': {
+	\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+	\		},
+	\		'css': 0,
+	\	}
+	\}
+
+Plug 'tpope/vim-fireplace'
+Plug 'gregspurrier/vim-midje'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+Plug 'tpope/vim-vinegar'
+
 call plug#end()
 
-colorscheme twilight256
+colorscheme PaperColor
+
+"hi MatchParen cterm=none ctermbg=blue ctermfg=green
+hi MatchParen cterm=bold ctermbg=none ctermfg=blue
 
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
@@ -142,7 +212,9 @@ elseif exists('$TMUX')
   set guicursor+=i:blinkwait0
 endif
 
-nnoremap <Leader>j :Explore<CR>
+"let NERDTreeHijackNetrw=1
+"nnoremap <Leader>j :NERDTree %<CR>
+"nnoremap <Leader>j :e `dirname %`<CR>
 nnoremap <C-x>0 :ZoomWinTabIn<CR>
 nnoremap <C-x>2 <C-w>s
 nnoremap <C-x>3 <C-w>v
@@ -212,24 +284,13 @@ augroup elixir_test
   autocmd Filetype elixir nnoremap <Leader>ec :call VimixPromptCommand()<CR>credo --strict<CR>
 augroup END
 
-map <Leader>n :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"map <Leader>n :NERDTreeToggle<CR>
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd bufenter *.jbuilder set ft=ruby
 
-set iskeyword-=_
-
-map <Leader>s :SyntasticToggleMode<CR>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+"set iskeyword-=_
 
 set shell=zsh
 

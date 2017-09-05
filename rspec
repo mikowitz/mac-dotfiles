@@ -1,2 +1,4 @@
---require /Users/mberkowitz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/rspec-pride-3.1.1/lib/rspec/pride
---format PrideFormatter
+/*--require /Users/mberkowitz/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/rspec-pride-3.1.1/lib/rspec/pride*/
+/*--format PrideFormatter*/
+--require rspec/instafail
+--format RSpec::Instafail
