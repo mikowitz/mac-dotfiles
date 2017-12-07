@@ -1,3 +1,11 @@
+if [[ -n ${INSIDE_EMACS} ]]; then
+  unsetopt zle
+  unsetopt prompt_cr
+  unsetopt prompt_subst
+  PS1='$ '
+  return
+fi
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -5,6 +13,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+#export ZSH_THEME="ys"
+#export ZSH_THEME="spaceship"
+#export ZSH_THEME="refined"
 export ZSH_THEME="robbyrussell"
 
 # Set to this to use case-sensitive completion
@@ -21,13 +32,13 @@ export ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby rails rvm autojump)
+plugins=(git osx ruby rvm autojump zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-set -o vi
+#set -o vi
 
 export TERM=xterm-256color
 
@@ -36,13 +47,15 @@ export GOPATH="$HOME/go"
 #export ANDROID_HOME="/Applications/adt-bundle-mac/sdk"
 #PATH="$PATH:$ANDROID_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 export JAVA_HOME="/Library/Java/Home"
+export MIX_HOME="$HOME/.mix"
 
 export PATH="./bin:/usr/local/bin:$PATH:/Applications/Lilypond.app/Contents/Resources/bin:/usr/local/texlive/2015/bin/universal-darwin"
-export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$HOME/Code/toolbox:$PATH"
 export PATH="/Applications/miniAudicle.app/Contents/Resources:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/usr/local/Cellar/openssl/1.0.2j/bin/openssl"
 
 export PGHOST=localhost
 
@@ -53,6 +66,9 @@ alias gpof='git push origin HEAD -f'
 alias gg='git grep -n $1'
 alias bake='bundle exec rake $1'
 alias e="open . -a /Applications/Emacs.app"
+alias ag="ag --hidden"
+alias rgp="command rg"
+alias kc="kubectl"
 
 alias device_list="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/simctl list"
 
@@ -113,3 +129,7 @@ export NVM_DIR="/Users/michaelberkowitz/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. $HOME/.ez.zsh
+
+ alias dc="docker-compose"
